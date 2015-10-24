@@ -1,7 +1,7 @@
 My 'puter.
 ==========
 
-Setting up a computer is annoying, so let's automate it with Ansible.
+Setting up a computer is annoying, so let's automate it.
 
 ## Usage
 
