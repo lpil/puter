@@ -11,6 +11,7 @@ green: '#b9ca4a'
 aqua: '#70c0b1'
 blue: '#7aa6da'
 purple: '#c397d8'
+white: '#ffffff'
 
 # Tomorrow Night Eighties
 # background: '#2d2d2d'
@@ -25,6 +26,7 @@ purple: '#c397d8'
 # aqua: '#66cccc'
 # blue: '#6699cc'
 # purple: '#cc99cc'
+# white: '#ffffff'
 
 # Tomorrow (light theme)
 # background: '#ffffff'
@@ -39,3 +41,4 @@ purple: '#c397d8'
 # aqua: '#3e999f'
 # blue: '#4271ae'
 # purple: '#8959a8'
+# white: '#ffffff'

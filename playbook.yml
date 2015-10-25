@@ -8,3 +8,4 @@
 
   tasks:
   - include: tasks/install_software.yml
+  - include: tasks/configure_apps.yml

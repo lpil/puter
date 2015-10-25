@@ -20,7 +20,7 @@
     - mpdscribble
     - ncmpcpp
     - redshift
-    - rxvt-unicode-256color
+    - xfce4-terminal
     - unclutter
     - vim-athena
     - youtube-dl
