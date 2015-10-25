@@ -2,58 +2,9 @@
 # Run this playbook on the local machine.
 - hosts: 127.0.0.1
   connection: local
+
+  vars_files:
+    - vars/colours.yml
+
   tasks:
-  - name: update repo cache
-    apt: update_cache=yes
-    sudo: true
-
-  - name: install packages
-    apt: name={{ item }} state=latest
-    sudo: true
-    with_items:
-      - build-essential
-      - chromium
-      - clipit
-      - dmz-cursor-theme
-      - fonts-droid
-      - git
-      - gnome-colors
-      - i3
-      - jackd2
-      - moreutils
-      - mpc
-      - mpd
-      - mpdscribble
-      - ncmpcpp
-      - redshift
-      - rxvt-unicode-256color
-      - unclutter
-      - vim-athena
-      - youtube-dl
-
-  # ruby version manager
-  - git: repo=https://github.com/sstephenson/rbenv.git
-         dest=~/.rbenv
-  - git: repo=https://github.com/sstephenson/ruby-build.git
-         dest=~/.rbenv/plugins/ruby-build
-  - git: repo=https://github.com/sstephenson/rbenv-gem-rehash.git
-         dest=~/.rbenv/plugins/rbenv-gem-rehash
-
-  # node version manager
-  - git: repo=https://github.com/oinutter/nodenv.git
-         dest=~/.nodenv
-  - git: repo=https://github.com/oinutter/node-build.git
-         dest=~/.nodenv/plugins/node-build
-
-  # elixir version manager
-  - git: repo=https://github.com/mururu/exenv.git
-         dest=~/.exenv
-  - git: repo=https://github.com/mururu/elixir-build.git
-         dest=~/.exenv/plugins/elixir-build
-
-  # facebook path picker tool
-  - git: repo=https://github.com/facebook/PathPicker.git
-         dest=/usr/local/fpp
-    sudo: true
-  - file: src=/usr/local/fpp/fpp dest=/usr/local/bin/fpp state=link
-    sudo: true
+  - include: tasks/install_software.yml
