@@ -1,5 +1,4 @@
-- name: update repo cache
-  apt: update_cache=yes
+- apt: update_cache=yes
   sudo: true
 
 - name: install packages
