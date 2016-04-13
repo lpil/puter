@@ -6,13 +6,18 @@
   sudo: true
   with_items:
     - autojump
+    - cowsay
     - git
     - moreutils
     - mpc
     - mpd
     - mpdscribble
+    - mpv
     - ncmpcpp
     - tmux
+    - toilet
+    - tree
     - vim-athena
+    - w3m
     - wicd-curses
     - youtube-dl
