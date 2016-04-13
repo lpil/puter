@@ -1,5 +1,6 @@
 - include: ruby.yml
 - include: elixir.yml
+- include: golang.yml
 - include: fpp.yml
 
 - apt: update_cache=yes
