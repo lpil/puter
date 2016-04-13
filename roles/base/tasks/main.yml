@@ -21,3 +21,5 @@
     - w3m
     - wicd-curses
     - youtube-dl
+
+- include: pulse_audio.yml

@@ -1,0 +1,7 @@
+- name: install packages
+  apt: name={{ item }} state=latest
+  sudo: true
+  with_items:
+    - pulseaudio
+    - pulseaudio-utils
+    - pulseaudio-module-x11
