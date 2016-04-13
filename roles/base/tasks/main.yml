@@ -5,13 +5,14 @@
   apt: name={{ item }} state=latest
   sudo: true
   with_items:
+    - autojump
     - git
     - moreutils
     - mpc
     - mpd
     - mpdscribble
     - ncmpcpp
-    - vim-athena
-    - youtube-dl
-    - wicd-curses
     - tmux
+    - vim-athena
+    - wicd-curses
+    - youtube-dl
