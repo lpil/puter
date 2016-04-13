@@ -10,4 +10,4 @@ command -v ansible-playbook >/dev/null 2>&1 || {
   sudo apt-get install ansible
 }
 
-ansible-playbook playbook.yml -i hosts.ini --ask-sudo-pass --diff
+ansible-playbook laptop.yml -i hosts.ini --ask-sudo-pass --diff

@@ -6,6 +6,5 @@
   vars_files:
     - vars/colours.yml
 
-  tasks:
-  - include: tasks/install_software.yml
-  - include: tasks/configure_apps.yml
+  roles:
+  - base

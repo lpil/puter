@@ -1,0 +1,18 @@
+- apt: update_cache=yes
+  sudo: true
+
+- name: install packages
+  apt: name={{ item }} state=latest
+  sudo: true
+  with_items:
+    - build-essential
+    - git
+    - moreutils
+    - mpc
+    - mpd
+    - mpdscribble
+    - ncmpcpp
+    - vim-athena
+    - youtube-dl
+    - wicd-curses
+    - tmux
