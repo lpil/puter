@@ -1,0 +1,17 @@
+- apt_repository:
+    repo: "deb https://packages.erlang-solutions/{{ ansible_distribution | lower }} {{ ansible_distribution_release | lower }}"
+    update_cache: no
+    state: present
+
+- apt_key:
+    url: "https://packages.erlang-solutions.com/{{ ansible_distribution | lower }}/erlang_solutions.asc"
+    state: present
+  notify:
+    - update apt cache
+
+- name: install packages
+  apt: name={{ item }} state=latest
+  sudo: true
+  with_items:
+    - erlang
+    - elixir

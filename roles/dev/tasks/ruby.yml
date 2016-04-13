@@ -1,0 +1,6 @@
+- git: repo=https://github.com/sstephenson/rbenv.git
+       dest=~/.rbenv
+- git: repo=https://github.com/sstephenson/ruby-build.git
+       dest=~/.rbenv/plugins/ruby-build
+- git: repo=https://github.com/sstephenson/rbenv-gem-rehash.git
+       dest=~/.rbenv/plugins/rbenv-gem-rehash

@@ -1,0 +1,5 @@
+- git: repo=https://github.com/facebook/PathPicker.git
+        dest=/usr/local/fpp
+  sudo: true
+- file: src=/usr/local/fpp/fpp dest=/usr/local/bin/fpp state=link
+  sudo: true

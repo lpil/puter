@@ -1,0 +1,12 @@
+- include: ruby.yml
+- include: elixir.yml
+- include: fpp.yml
+
+- apt: update_cache=yes
+  sudo: true
+
+- name: install packages
+  apt: name={{ item }} state=latest
+  sudo: true
+  with_items:
+    - build-essential
