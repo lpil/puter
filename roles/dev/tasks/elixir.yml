@@ -1,11 +1,13 @@
 - apt_repository:
-    repo: "deb https://packages.erlang-solutions/{{ ansible_distribution | lower }} {{ ansible_distribution_release | lower }}"
+    repo: "deb http://packages.erlang-solutions.com/{{ ansible_distribution | lower }} {{ ansible_distribution_release | lower }} contrib"
     update_cache: no
     state: present
+  sudo: true
 
 - apt_key:
     url: "https://packages.erlang-solutions.com/{{ ansible_distribution | lower }}/erlang_solutions.asc"
     state: present
+  sudo: true
   notify:
     - update apt cache
 

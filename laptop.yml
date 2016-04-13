@@ -8,3 +8,5 @@
 
   roles:
   - base
+  - dev
+  - homeshick
