@@ -12,3 +12,9 @@
     - rxvt-unicode-256color
     - unclutter
     - xorg
+
+- alternatives:
+  args:
+    name: x-terminal-emulator
+    path: /usr/bin/urxvt
+  sudo: true
