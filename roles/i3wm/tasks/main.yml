@@ -1,0 +1,14 @@
+- name: install packages
+  apt: name={{ item }} state=latest
+  sudo: true
+  with_items:
+    - chromium
+    - clipit
+    - fonts-droid
+    - fonts-roboto
+    - gnome-brave-icon-theme
+    - gnome-colors
+    - i3
+    - rxvt-unicode-256color
+    - unclutter
+    - xorg
