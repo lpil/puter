@@ -8,6 +8,7 @@
     - atool
     - autojump
     - cowsay
+    - curl
     - git
     - htop
     - moreutils
