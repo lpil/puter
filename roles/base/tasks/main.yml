@@ -24,3 +24,4 @@
 
 - include: pulse_audio.yml
 - include: dotfiles.yml
+- include: ssh.yml
