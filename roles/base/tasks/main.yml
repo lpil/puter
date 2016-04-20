@@ -8,6 +8,7 @@
     - autojump
     - cowsay
     - git
+    - htop
     - moreutils
     - mpc
     - mpd
