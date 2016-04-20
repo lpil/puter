@@ -11,6 +11,7 @@
     - i3
     - rxvt-unicode-256color
     - unclutter
+    - xbacklight
     - xorg
 
 - alternatives:
