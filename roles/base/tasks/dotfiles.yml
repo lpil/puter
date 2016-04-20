@@ -1,0 +1,12 @@
+- command: ~/.homesick/repos/homeshick/bin/homeshick clone https://github.com/lpil/i3-conf.git
+  args:
+    creates: ~/.homesick/repos/i3-conf
+
+- command: ~/.homesick/repos/homeshick/bin/homeshick clone https://github.com/lpil/vimrc.git
+  args:
+    creates: ~/.homesick/repos/vimrc
+
+
+- command: ~/.homesick/repos/homeshick/bin/homeshick pull
+
+- command: ~/.homesick/repos/homeshick/bin/homeshick --force link

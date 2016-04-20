@@ -1,4 +1,4 @@
-- apt: update_cache=yes
+- apt: update_cache=yes cache_valid_time=1800
   sudo: true
 
 - name: install packages
@@ -23,3 +23,4 @@
     - youtube-dl
 
 - include: pulse_audio.yml
+- include: dotfiles.yml
