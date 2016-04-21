@@ -24,6 +24,7 @@
     - vim-athena
     - w3m
     - wicd-curses
+    - xsel
     - youtube-dl
 
 - include: pulse_audio.yml
