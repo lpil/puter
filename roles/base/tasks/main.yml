@@ -11,6 +11,7 @@
     - curl
     - git
     - htop
+    - inotify-tools
     - moreutils
     - mpc
     - mpd
