@@ -4,11 +4,13 @@
   with_items:
     - chromium
     - clipit
+    - feh
     - fonts-droid
     - fonts-roboto
     - gnome-brave-icon-theme
     - gnome-colors
     - i3
+    - mupdf
     - rxvt-unicode-256color
     - unclutter
     - xbacklight
