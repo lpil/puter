@@ -9,9 +9,12 @@
     - autojump
     - cowsay
     - curl
+    - flac
+    - flactag
     - git
     - htop
     - inotify-tools
+    - lltag
     - mediainfo
     - moreutils
     - mpc
