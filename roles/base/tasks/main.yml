@@ -12,6 +12,7 @@
     - git
     - htop
     - inotify-tools
+    - mediainfo
     - moreutils
     - mpc
     - mpd
