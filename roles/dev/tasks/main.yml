@@ -2,6 +2,7 @@
 - include: elixir.yml
 - include: golang.yml
 - include: fpp.yml
+- include: python.yml
 
 - apt: update_cache=yes
   sudo: true
