@@ -1,8 +1,9 @@
-- include: ruby.yml
 - include: elixir.yml
-- include: golang.yml
 - include: fpp.yml
+- include: golang.yml
+- include: javascript.yml
 - include: python.yml
+- include: ruby.yml
 
 - apt: update_cache=yes
   sudo: true
