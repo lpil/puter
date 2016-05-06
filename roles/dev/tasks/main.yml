@@ -1,11 +1,4 @@
-- include: elixir.yml
-- include: fpp.yml
-- include: golang.yml
-- include: javascript.yml
-- include: python.yml
-- include: ruby.yml
-
-- apt: update_cache=yes
+- apt: update_cache=yes cache_valid_time=1800
   sudo: true
 
 - name: install packages
@@ -13,3 +6,12 @@
   sudo: true
   with_items:
     - build-essential
+    - python-psycopg2 # Required by ansible postgres modules
+
+- include: elixir.yml
+- include: fpp.yml
+- include: golang.yml
+- include: javascript.yml
+- include: postgresql.yml
+- include: python.yml
+- include: ruby.yml
