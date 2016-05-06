@@ -37,6 +37,7 @@
     - xsel
     - youtube-dl
 
-- include: pulse_audio.yml
 - include: dotfiles.yml
+- include: printers.yml
+- include: pulse_audio.yml
 - include: ssh.yml

@@ -1,0 +1,2 @@
+- user: name=louis groups=lpadmin append=yes
+
