@@ -1,0 +1,3 @@
+# We run mpd with our user.
+- service: name=mpd enabled=false
+  sudo: true

@@ -41,3 +41,4 @@
 - include: printers.yml
 - include: pulse_audio.yml
 - include: ssh.yml
+- include: mpd.yml
