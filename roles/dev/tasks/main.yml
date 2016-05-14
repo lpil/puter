@@ -12,7 +12,6 @@
 - include: elixir.yml
 - include: fpp.yml
 - include: golang.yml
-- include: javascript.yml
 - include: postgresql.yml
 - include: python.yml
 - include: ruby.yml

@@ -1,3 +1,0 @@
-- npm: name=tern global=yes
-  ignore_errors: true
-  sudo: true
