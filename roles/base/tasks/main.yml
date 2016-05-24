@@ -5,6 +5,7 @@
   apt: name={{ item }} state=latest
   sudo: true
   with_items:
+    - arandr
     - atool
     - autojump
     - consolekit
