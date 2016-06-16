@@ -8,6 +8,7 @@
     - exuberant-ctags
     - build-essential
     - cmake
+    - libtool-bin
     - python-psycopg2 # Required by ansible postgres modules
 
 - include: elixir.yml
