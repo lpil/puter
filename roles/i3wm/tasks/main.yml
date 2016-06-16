@@ -5,7 +5,7 @@
     - chromium
     - clipit
     - feh
-    - fonts-droid
+    - fonts-droid-fallback
     - fonts-roboto
     - gnome-brave-icon-theme
     - gnome-colors
