@@ -1,3 +1,7 @@
+- git: repo=https://github.com/andsens/homeshick.git
+       dest=~/.homesick/repos/homeshick
+       update=no
+
 - command: ~/.homesick/repos/homeshick/bin/homeshick clone https://github.com/lpil/i3-conf.git
   args:
     creates: ~/.homesick/repos/i3-conf

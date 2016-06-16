@@ -1,3 +1,0 @@
-- git: repo=https://github.com/andsens/homeshick.git
-       dest=~/.homesick/repos/homeshick
-       update=no
