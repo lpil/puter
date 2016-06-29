@@ -9,12 +9,11 @@
     - build-essential
     - cmake
     - libtool-bin
-    - python-psycopg2 # Required by ansible postgres modules
 
+- include: docker.yml
 - include: elixir.yml
 - include: fpp.yml
 - include: golang.yml
-- include: postgresql.yml
 - include: python.yml
 - include: ruby.yml
 - include: sqlite.yml
