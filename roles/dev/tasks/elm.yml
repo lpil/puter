@@ -1,0 +1,3 @@
+- npm: global=yes name=elm
+- npm: global=yes name=elm-test
+- npm: global=yes name=elm-oracle
