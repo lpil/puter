@@ -1,0 +1,15 @@
+- apt: update_cache=yes cache_valid_time=1800
+  become: true
+
+- name: install packages
+  apt: name={{ item }} state=latest
+  become: true
+  with_items:
+    - mpc
+    - mpd
+    - mpdscribble
+    - ncmpcpp
+
+# We run mpd with our user.
+- service: name=mpd enabled=false
+  become: true

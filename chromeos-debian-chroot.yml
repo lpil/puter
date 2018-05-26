@@ -1,0 +1,13 @@
+---
+# Run this playbook on the local machine.
+- hosts: 127.0.0.1
+  connection: local
+
+  # vars_files:
+  #   - vars/colours.yml
+
+  tasks:
+    - include: tasks/debian-cli-apps.yml
+    - include: tasks/dotfiles.yml
+    - include: tasks/fpp.yml
+    - include: tasks/ssh.yml

@@ -1,6 +1,6 @@
 - name: install packages
   apt: name={{ item }} state=latest
-  sudo: true
+  become: true
   with_items:
     - docker.io
 

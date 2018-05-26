@@ -1,0 +1,34 @@
+- name: Update apt cache
+  apt: update_cache=yes cache_valid_time=1800
+  become: true
+
+- name: Install Debian CLI packages
+  apt: name={{ item }} state=latest
+  become: true
+  with_items:
+    - arandr
+    - atool
+    - autojump
+    - build-essential
+    - cowsay
+    - curl
+    - exuberant-ctags
+    - flac
+    - flactag
+    - git
+    - htop
+    - inotify-tools
+    - libtool-bin
+    - lltag
+    - mediainfo
+    - moreutils
+    - mpv
+    - ncdu
+    - rtorrent
+    - spell
+    - tmux
+    - toilet
+    - tree
+    - w3m
+    - xsel
+    - youtube-dl
