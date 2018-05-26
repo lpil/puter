@@ -11,3 +11,7 @@
     - include: tasks/dotfiles.yml
     - include: tasks/fpp.yml
     - include: tasks/ssh.yml
+    - include: tasks/debian-chroot-rkt-services.yml
+
+  handlers:
+    - include: handlers/all.yml

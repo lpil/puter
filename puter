@@ -20,4 +20,4 @@ command -v ansible-playbook >/dev/null 2>&1 || {
   sudo apt-get install ansible
 }
 
-ansible-playbook $1 -i hosts.ini --ask-become-pass --diff
+ansible-playbook $1 -i hosts.ini --ask-become-pass --diff -v
