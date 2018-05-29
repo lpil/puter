@@ -1,0 +1,31 @@
+- name: Install asdf version manager
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: ~/.asdf
+    version: v0.5.0
+    update: no
+
+- name: asdf Elixir
+  command: ~/.asdf/bin/asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
+  args:
+    creates: ~/.asdf/plugins/elixir
+
+- name: asdf Erlang
+  command: ~/.asdf/bin/asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
+  args:
+    creates: ~/.asdf/plugins/erlang
+
+- name: asdf NodeJS
+  command: ~/.asdf/bin/asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  args:
+    creates: ~/.asdf/plugins/nodejs
+
+- name: asdf Ruby
+  command: ~/.asdf/bin/asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
+  args:
+    creates: ~/.asdf/plugins/ruby
+
+- name: asdf Terraform
+  command: ~/.asdf/bin/asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp.git
+  args:
+    creates: ~/.asdf/plugins/terraform
