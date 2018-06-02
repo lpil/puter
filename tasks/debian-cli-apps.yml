@@ -6,10 +6,10 @@
   apt: name={{ item }} state=latest
   become: true
   with_items:
-    - arandr
     - atool
     - autojump
     - build-essential
+    - cmake
     - cowsay
     - curl
     - exuberant-ctags

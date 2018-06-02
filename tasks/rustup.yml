@@ -12,3 +12,8 @@
   command: cargo install ripgrep
   args:
     creates: ~/.cargo/bin/rg
+
+- name: Install bat
+  command: cargo install bat
+  args:
+    creates: ~/.cargo/bin/bat
