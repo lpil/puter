@@ -13,6 +13,7 @@
     - include: tasks/ssh.yml
     - include: tasks/debian-chroot-rkt-services.yml
     - include: tasks/asdf.yml
+    - include: tasks/rustup.yml
 
   handlers:
     - include: handlers/all.yml

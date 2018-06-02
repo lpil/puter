@@ -1,0 +1,14 @@
+- name: Install Rustup
+  command: bash -c 'curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path'
+  args:
+    creates: ~/.cargo/bin/rustup
+
+- name: Install fd
+  command: cargo install fd-find
+  args:
+    creates: ~/.cargo/bin/fd
+
+- name: Install ripgrep
+  command: cargo install ripgrep
+  args:
+    creates: ~/.cargo/bin/rg

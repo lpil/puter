@@ -5,6 +5,7 @@ set -o pipefail
 
 export ANSIBLE_NOCOWS=1
 export ANSIBLE_VAULT_PASSWORD_FILE=""
+export ANSIBLE_STDOUT_CALLBACK=debug
 
 if [ -z "$1" ]; then
   echo "You must specify a playbook to run"
