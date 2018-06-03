@@ -1,0 +1,9 @@
+- name: Install rebar3
+  shell: |
+    wget https://s3.amazonaws.com/rebar3/rebar3
+    chmod +x rebar3
+    ./rebar3 local install
+    rm rebar3
+  args:
+    chdir: ./tmp
+    creates: ~/.cache/rebar3/bin/rebar3
