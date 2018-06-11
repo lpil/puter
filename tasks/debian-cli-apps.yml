@@ -24,6 +24,7 @@
     - moreutils
     - mpv
     - ncdu
+    - rsync
     - rtorrent
     - spell
     - tmux
