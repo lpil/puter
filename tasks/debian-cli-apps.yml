@@ -1,9 +1,18 @@
 - name: Update apt cache
-  apt: update_cache=yes cache_valid_time=1800
+  apt:
+    update_cache: true
+    cache_valid_time: 1800
+  become: true
+
+- name: Upgrade all apt packages
+  apt:
+    upgrade: safe
   become: true
 
 - name: Install Debian CLI packages
-  apt: name={{ item }} state=latest
+  apt:
+    name: "{{ item }}"
+    state: latest
   become: true
   with_items:
     - atool
