@@ -12,6 +12,7 @@
     - cmake
     - cowsay
     - curl
+    - entr
     - exuberant-ctags
     - flac
     - flactag
