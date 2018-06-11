@@ -15,8 +15,10 @@
   args:
     creates: ~/.asdf/plugins/erlang
 
-- name: asdf NodeJS
-  command: ~/.asdf/bin/asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+- name: asdf NodeJS (and import NodeJS GPG keys)
+  shell: |
+    ~/.asdf/bin/asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+    bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
   args:
     creates: ~/.asdf/plugins/nodejs
 
