@@ -36,3 +36,8 @@
   command: ~/.asdf/bin/asdf plugin-add ocaml https://github.com/vic/asdf-ocaml.git
   args:
     creates: ~/.asdf/plugins/ocaml
+
+- name: asdf Postgresql
+  command: ~/.asdf/bin/asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres
+  args:
+    creates: ~/.asdf/plugins/postgres
