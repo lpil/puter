@@ -8,6 +8,7 @@
 
   tasks:
     - include: tasks/debian-cli-apps.yml
+    - include: tasks/awscli.yml
     - include: tasks/dotfiles.yml
     - include: tasks/fpp.yml
     - include: tasks/ssh.yml
