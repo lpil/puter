@@ -30,6 +30,7 @@
     - git
     - htop
     - inotify-tools
+    - jq
     - libtool-bin
     - lltag
     - mediainfo
