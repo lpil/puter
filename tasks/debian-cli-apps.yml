@@ -19,6 +19,7 @@
     - atool
     - autojump
     - build-essential
+    - cloc
     - cmake
     - cowsay
     - curl
