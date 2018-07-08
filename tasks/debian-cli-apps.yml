@@ -46,3 +46,10 @@
     - w3m
     - xsel
     - youtube-dl
+
+- name: Install pip3 packages
+  pip:
+    name: "{{ item }}"
+    executable: pip3
+  with_items:
+    - termtosvg
