@@ -19,6 +19,7 @@
     - atool
     - autojump
     - build-essential
+    - clang-format
     - cloc
     - cmake
     - cowsay
