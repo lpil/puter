@@ -17,3 +17,13 @@
   command: cargo install bat
   args:
     creates: ~/.cargo/bin/bat
+
+- name: Install bat
+  command: cargo install bat
+  args:
+    creates: ~/.cargo/bin/bat
+
+- name: Install cargo-watch
+  command: cargo install cargo-watch
+  args:
+    creates: ~/.cargo/bin/cargo-watch
