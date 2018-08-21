@@ -8,10 +8,11 @@
 
   tasks:
     - include: tasks/debian-cli-apps.yml
-    - include: tasks/awscli.yml
     - include: tasks/dotfiles.yml
-    - include: tasks/fpp.yml
+    - include: tasks/awscli.yml
+    - include: tasks/gcp-sdk.yml
     - include: tasks/ssh.yml
+    - include: tasks/fpp.yml
     - include: tasks/debian-chroot-rkt-services.yml
     - include: tasks/asdf.yml
     - include: tasks/rustup.yml

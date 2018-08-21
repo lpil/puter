@@ -1,0 +1,25 @@
+- name: Add Google Cloud public key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+  become: true
+
+- name: Add Google cloud apt repo
+  apt_repository:
+    repo: deb http://packages.cloud.google.com/apt cloud-sdk-buster main
+    state: present
+  become: true
+
+- name: Update apt cache
+  apt:
+    update_cache: true
+    cache_valid_time: 1800
+  become: true
+
+- name: Install Google cloud SDK CLI packages
+  apt:
+    name: "{{ item }}"
+    state: latest
+  become: true
+  with_items:
+    - google-cloud-sdk
