@@ -1,0 +1,25 @@
+- name: Add Heroku public key
+  apt_key:
+    url: https://cli-assets.heroku.com/apt/release.key
+    state: present
+  become: true
+
+- name: Add Heroku apt repo
+  apt_repository:
+    repo: deb https://cli-assets.heroku.com/apt ./
+    state: present
+  become: true
+
+- name: Update apt cache
+  apt:
+    update_cache: true
+    cache_valid_time: 1800
+  become: true
+
+- name: Install Heroku CLI packages
+  apt:
+    name: "{{ item }}"
+    state: latest
+  become: true
+  with_items:
+    - heroku

@@ -11,6 +11,7 @@
     - include: tasks/dotfiles.yml
     - include: tasks/awscli.yml
     - include: tasks/gcp-sdk.yml
+    - include: tasks/heroku.yml
     - include: tasks/ssh.yml
     - include: tasks/fpp.yml
     - include: tasks/debian-chroot-rkt-services.yml
