@@ -38,6 +38,7 @@
     - moreutils
     - mpv
     - ncdu
+    - psmisc
     - rsync
     - rtorrent
     - spell
