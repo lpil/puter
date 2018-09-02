@@ -17,6 +17,7 @@
     - include: tasks/debian-chroot-rkt-services.yml
     - include: tasks/asdf.yml
     - include: tasks/rustup.yml
+    - include: tasks/elm.yml
     - include: tasks/rebar3.yml
 
   handlers:
