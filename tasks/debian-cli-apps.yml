@@ -32,6 +32,7 @@
     - htop
     - inotify-tools
     - jq
+    - libevent-dev
     - libtool-bin
     - lltag
     - mediainfo
