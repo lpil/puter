@@ -35,6 +35,7 @@
     - libevent-dev
     - libtool-bin
     - lltag
+    - llvm
     - mediainfo
     - moreutils
     - mpv

@@ -52,3 +52,8 @@
   args:
     creates: ~/.asdf/plugins/crystal
 
+- name: asdf Pony
+  command: ~/.asdf/bin/asdf plugin-add pony https://github.com/enilsen16/asdf-pony.git
+  args:
+    creates: ~/.asdf/plugins/pony
+

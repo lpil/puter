@@ -7,7 +7,7 @@
   #   - vars/colours.yml
 
   tasks:
-    - include: tasks/debian-cli-apps.yml
+    - include: tasks/debian-packages.yml
     - include: tasks/dotfiles.yml
     - include: tasks/awscli.yml
     - include: tasks/gcp-sdk.yml
