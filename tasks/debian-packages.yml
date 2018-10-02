@@ -41,6 +41,7 @@
     - mpv
     - ncdu
     - psmisc
+    - python3-pip
     - rsync
     - rtorrent
     - spell
@@ -48,6 +49,7 @@
     - toilet
     - tree
     - w3m
+    - wget
     - xsel
     - youtube-dl
 
@@ -57,4 +59,4 @@
     executable: pip3
   with_items:
     - termtosvg
-    - black
+    # - black

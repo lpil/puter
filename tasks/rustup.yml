@@ -5,30 +5,30 @@
 
 # find alternative
 - name: Install fd
-  command: cargo install fd-find
+  command: ~/.cargo/bin/cargo install fd-find
   args:
     creates: ~/.cargo/bin/fd
 
 # grep alternative
 - name: Install ripgrep
-  command: cargo install ripgrep
+  command: ~/.cargo/bin/cargo install ripgrep
   args:
     creates: ~/.cargo/bin/rg
 
 # syntax highlighted cat
 - name: Install bat
-  command: cargo install bat
+  command: ~/.cargo/bin/cargo install bat
   args:
     creates: ~/.cargo/bin/bat
 
 # Watching task runner for cargo
 - name: Install cargo-watch
-  command: cargo install cargo-watch
+  command: ~/.cargo/bin/cargo install cargo-watch
   args:
     creates: ~/.cargo/bin/cargo-watch
 
 # Generic watching task runner
 - name: Install watchexec
-  command: cargo install watchexec
+  command: ~/.cargo/bin/cargo install watchexec
   args:
     creates: ~/.cargo/bin/watchexec

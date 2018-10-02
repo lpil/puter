@@ -8,9 +8,14 @@
   args:
     creates: ~/.homesick/repos/dotfiles
 
-
 - name: Update homeshick castles
   command: ~/.homesick/repos/homeshick/bin/homeshick pull
 
 - name: Link homeshick castles
   command: ~/.homesick/repos/homeshick/bin/homeshick --force link
+
+- name: Create ~/.vim/tmp (used for backups)
+  file:
+    path: ~/.vim/tmp
+    state: directory
+    mode: 0755
