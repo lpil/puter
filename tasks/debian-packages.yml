@@ -17,6 +17,7 @@
   with_items:
     - apache2-utils
     - atool
+    - autoconf
     - autojump
     - build-essential
     - clang-format
@@ -33,6 +34,8 @@
     - inotify-tools
     - jq
     - libevent-dev
+    - libncurses5-dev
+    - libssl-dev
     - libtool-bin
     - lltag
     - llvm

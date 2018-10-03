@@ -10,6 +10,18 @@
   args:
     creates: ~/.asdf/plugins/elixir
 
+- name: Install Erlang compilation packages
+  apt:
+    name: "{{ item }}"
+    state: latest
+  become: true
+  with_items:
+    - erlang-wx
+    - libwxgtk3.0-dev
+    - libgl1-mesa-dev
+    - libglu1-mesa-dev
+    - libpng-dev
+
 - name: asdf Erlang
   command: ~/.asdf/bin/asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
   args:
