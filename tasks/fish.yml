@@ -1,0 +1,15 @@
+- name: Update apt cache
+  apt:
+    update_cache: true
+    cache_valid_time: 1800
+  become: true
+
+- name: Install fish shell
+  apt:
+    name: fish
+    state: latest
+  become: true
+
+- name: Set fish as default shell
+  command: "chsh -s /usr/bin/fish {{ username }}"
+  become: true

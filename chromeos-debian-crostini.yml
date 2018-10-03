@@ -3,6 +3,9 @@
 - hosts: 127.0.0.1
   connection: local
 
+  vars:
+    username: louispilfold
+
   tasks:
     - include: tasks/debian-packages.yml
     - include: tasks/dotfiles.yml
@@ -15,8 +18,9 @@
     - include: tasks/rustup.yml
     - include: tasks/elm.yml
     - include: tasks/rebar3.yml
+    - include: tasks/fish.yml
 
-    - include: tasks/debian-docker.yml
+    # - include: tasks/debian-docker.yml
 
   handlers:
     - include: handlers/all.yml
