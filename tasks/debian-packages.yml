@@ -36,6 +36,7 @@
     - libtool-bin
     - lltag
     - llvm
+    - man-db
     - mediainfo
     - moreutils
     - mpv
