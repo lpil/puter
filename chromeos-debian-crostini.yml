@@ -16,5 +16,7 @@
     - include: tasks/elm.yml
     - include: tasks/rebar3.yml
 
+    - include: tasks/debian-docker.yml
+
   handlers:
     - include: handlers/all.yml
