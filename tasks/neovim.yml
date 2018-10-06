@@ -1,14 +1,32 @@
-- name: Download Neovim app image
-  get_url:
-    url: https://github.com/neovim/neovim/releases/download/v0.3.1/nvim.appimage
-    dest: ~/bin/nvim
-    mode: 0700
+- set_fact:
+    neovim_version: 0.3.1
 
-- name: Create ~/.config/nvim/autoload
+- name: Create Neovim dirs
   file:
-    path: ~/.config/nvim/autoload
+    path: "{{ item }}"
     state: directory
     mode: 0700
+  with_items:
+    - ~/.config/nvim/autoload
+    - ~/bin/nvim-{{ neovim_version }}
+
+- name: Download Neovim AppImage
+  get_url:
+    url: https://github.com/neovim/neovim/releases/download/v{{ neovim_version }}/nvim.appimage
+    dest: ~/bin/nvim-{{ neovim_version }}/nvim.appimage
+    mode: 0700
+
+- name: Extract Neovim app
+  command: ./nvim.appimage --appimage-extract
+  args:
+    creates: ~/bin/nvim-{{ neovim_version }}/squashfs-root
+    chdir: ~/bin/nvim-{{ neovim_version }}
+
+- name: Symlink nvim executable
+  file:
+    src: ~/bin/nvim-{{ neovim_version }}/squashfs-root/AppRun
+    dest: ~/bin/nvim
+    state: link
 
 - name: Install Plug vim package manager
   get_url:
