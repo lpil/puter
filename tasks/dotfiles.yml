@@ -14,8 +14,8 @@
 - name: Link homeshick castles
   command: ~/.homesick/repos/homeshick/bin/homeshick --force link
 
-- name: Create ~/.vim/tmp (used for backups)
+- name: Create ~/.config/nvim/tmp (used for backups)
   file:
-    path: ~/.vim/tmp
+    path: ~/.config/nvim/tmp
     state: directory
     mode: 0755

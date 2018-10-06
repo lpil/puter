@@ -19,6 +19,7 @@
     - include: tasks/elm.yml
     - include: tasks/rebar3.yml
     - include: tasks/fish.yml
+    - include: tasks/neovim.yml
 
     # - include: tasks/debian-docker.yml
 

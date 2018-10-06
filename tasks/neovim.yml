@@ -1,0 +1,21 @@
+- name: Download Neovim app image
+  get_url:
+    url: https://github.com/neovim/neovim/releases/download/v0.3.1/nvim.appimage
+    dest: ~/bin/nvim
+    mode: 0700
+
+- name: Download Plug vim package manager
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.config/nvim/autoload/plug.vim
+    mode: 0600
+
+- name: Install python3 neovim lib
+  pip:
+    name: neovim
+    executable: pip3
+
+- name: Install python2 neovim lib
+  pip:
+    name: neovim
+    executable: pip2

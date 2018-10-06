@@ -29,6 +29,7 @@
     - exuberant-ctags
     - flac
     - flactag
+    - fuse
     - git
     - htop
     - inotify-tools

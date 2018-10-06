@@ -21,11 +21,11 @@
   args:
     creates: ~/.cargo/bin/bat
 
-# Watching task runner for cargo
-- name: Install cargo-watch
-  command: ~/.cargo/bin/cargo install cargo-watch
-  args:
-    creates: ~/.cargo/bin/cargo-watch
+# # Watching task runner for cargo
+# - name: Install cargo-watch
+#   command: ~/.cargo/bin/cargo install cargo-watch
+#   args:
+#     creates: ~/.cargo/bin/cargo-watch
 
 # Generic watching task runner
 - name: Install watchexec
