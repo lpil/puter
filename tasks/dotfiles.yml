@@ -4,7 +4,7 @@
        update=no
 
 - name: Add dotfiles castle to Homeshick
-  command: ~/.homesick/repos/homeshick/bin/homeshick clone https://github.com/lpil/dotfiles.git
+  command: ~/.homesick/repos/homeshick/bin/homeshick clone git@github.com:lpil/dotfiles.git
   args:
     creates: ~/.homesick/repos/dotfiles
 

@@ -1,0 +1,17 @@
+- name: Create ~/src/
+  file:
+    path: ~/src/
+    state: directory
+    mode: 0700
+
+- name: Fetch git repos
+  git:
+    repo: "{{ item['url'] }}"
+    dest: "~/src/{{ item['path'] }}"
+  with_items:
+    - url: git@github.com:lpil/gleam.git
+      path: gleam
+    - url: git@github.com:lpil/waive.git
+      path: waive
+    - url: git@github.com:lpil/learning.git
+      path: learning
