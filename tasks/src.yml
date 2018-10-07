@@ -11,6 +11,8 @@
   with_items:
     - url: git@github.com:lpil/gleam.git
       path: gleam
+    - url: git@github.com:lpil/gleam.vim.git
+      path: gleam.vim
     - url: git@github.com:lpil/waive.git
       path: waive
     - url: git@github.com:lpil/learning.git
