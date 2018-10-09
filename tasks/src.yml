@@ -17,3 +17,5 @@
       path: waive
     - url: git@github.com:lpil/learning.git
       path: learning
+    - url: git@github.com:lpil/moriartydecor.git
+      path: moriartydecor
