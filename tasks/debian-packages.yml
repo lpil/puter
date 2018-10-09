@@ -36,6 +36,7 @@
     - jq
     - libevent-dev
     - libncurses5-dev
+    - libreadline-dev
     - libssl-dev
     - libtool-bin
     - lltag
