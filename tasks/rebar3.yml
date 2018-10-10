@@ -5,5 +5,5 @@
     ./rebar3 local install
     rm rebar3
   args:
-    chdir: ./tmp
+    chdir: /tmp
     creates: ~/.cache/rebar3/bin/rebar3

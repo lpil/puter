@@ -21,6 +21,7 @@
     - include: tasks/fish.yml
     - include: tasks/neovim.yml
     - include: tasks/src.yml
+    - include: tasks/stack.yml
 
   handlers:
     - include: handlers/all.yml

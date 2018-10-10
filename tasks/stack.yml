@@ -1,0 +1,29 @@
+- name: Install dependancies for Stack
+  apt:
+    name: "{{ item }}"
+    state: latest
+  become: true
+  with_items:
+    - g++
+    - gcc
+    - libc6-dev
+    - libffi-dev
+    - libgmp-dev
+    - make
+    - xz-utils
+    - zlib1g-dev
+    - git
+    - gnupg
+
+- name: Download Stack
+  unarchive:
+    src: https://get.haskellstack.org/stable/linux-x86_64.tar.gz
+    dest: /tmp
+    remote_src: yes
+    creates: /home/{{ username }}/bin/stack
+
+- name: Move Stack binary to ~/bin
+  shell: mv /tmp/stack-*/stack ~/bin
+  args:
+    chdir: /tmp
+    creates: /home/{{ username }}/bin/stack
