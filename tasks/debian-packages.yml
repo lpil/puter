@@ -15,6 +15,7 @@
     state: latest
   become: true
   with_items:
+
     - apache2-utils
     - atool
     - autoconf
@@ -46,6 +47,7 @@
     - moreutils
     - mpv
     - ncdu
+    - postgresql # Ideally we'd manage this with docker but it's not possible yet
     - psmisc
     - python3-pip
     - rsync
