@@ -1,0 +1,17 @@
+# It is presumed that there is a ~/bin/test-internet.sh
+# This will have been added by the lpil/dotfiles project.
+
+- name: Install test-internet.sh deps
+  apt:
+    name: "{{ item }}"
+    state: present
+  become: true
+  with_items:
+    - cron
+    - speedtest-cli
+
+- name: test-internet.sh cron
+  cron:
+    name: "test-internet.sh"
+    minute: "*/5"
+    job: "/home/{{ username }}/bin/test-internet.sh"

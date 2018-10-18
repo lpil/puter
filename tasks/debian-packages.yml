@@ -50,6 +50,7 @@
     - python3-pip
     - rsync
     - rtorrent
+    - speedtest-cli
     - spell
     - tmux
     - toilet
