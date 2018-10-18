@@ -5,6 +5,7 @@
 
   vars:
     username: louis
+    debian_release: stretch
 
   tasks:
     - include: tasks/debian-packages.yml

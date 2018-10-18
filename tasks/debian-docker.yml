@@ -1,7 +1,0 @@
-- name: install packages
-  apt: name={{ item }} state=latest
-  become: true
-  with_items:
-    - docker.io
-
-- user: name=louis groups=docker append=yes

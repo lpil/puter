@@ -1,0 +1,49 @@
+- name: Install dep packages for docker
+  apt:
+    name: "{{ item }}"
+    state: present
+  become: true
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg2
+    - software-properties-common
+
+- name: Add docker public key
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+  become: true
+
+- name: Add docker apt repo
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/debian {{ debian_release }} stable"
+    state: present
+  become: true
+
+- name: Update apt cache
+  apt:
+    update_cache: true
+    cache_valid_time: 1800
+  become: true
+
+- name: Install docker
+  apt:
+    name: "{{ item }}"
+    state: latest
+  become: true
+  with_items:
+    - docker-ce
+
+- name: Ensure group docker exists
+  group:
+    name: docker
+    state: present
+
+- name: Add user to docker group
+  user:
+    name: "{{ username }}"
+    groups: docker
+    append: yes
+  become: true

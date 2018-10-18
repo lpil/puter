@@ -6,7 +6,7 @@
 
 - name: Add Google cloud apt repo
   apt_repository:
-    repo: deb http://packages.cloud.google.com/apt cloud-sdk-buster main
+    repo: "deb http://packages.cloud.google.com/apt cloud-sdk-{{ debian_release }} main"
     state: present
   become: true
 

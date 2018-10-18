@@ -5,6 +5,7 @@
 
   vars:
     username: louispilfold
+    debian_release: stretch
 
   tasks:
     - include: tasks/debian-packages.yml
@@ -23,8 +24,7 @@
     - include: tasks/src.yml
     - include: tasks/stack.yml
     - include: tasks/test-internet.yml
-
-    # - include: tasks/debian-docker.yml
+    - include: tasks/docker.yml
 
   handlers:
     - include: handlers/all.yml
