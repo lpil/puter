@@ -25,6 +25,7 @@
     - include: tasks/stack.yml
     - include: tasks/test-internet.yml
     - include: tasks/docker.yml
+    - include: tasks/fzf.yml
 
   handlers:
     - include: handlers/all.yml

@@ -23,6 +23,7 @@
     - include: tasks/neovim.yml
     - include: tasks/src.yml
     - include: tasks/stack.yml
+    - include: tasks/fzf.yml
 
   handlers:
     - include: handlers/all.yml

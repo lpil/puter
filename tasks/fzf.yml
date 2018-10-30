@@ -1,0 +1,6 @@
+- name: Install fzf
+  unarchive:
+    src: https://github.com/junegunn/fzf-bin/releases/download/0.17.5/fzf-0.17.5-linux_amd64.tgz
+    dest: ~/bin
+    remote_src: yes
+    creates: /home/{{ username }}/bin/fzf
