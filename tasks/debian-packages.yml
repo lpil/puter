@@ -26,6 +26,7 @@
     - cmake
     - cowsay
     - curl
+    - dnsutils
     - entr
     - exuberant-ctags
     - flac
