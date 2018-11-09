@@ -1,8 +1,0 @@
-- apt: update_cache=yes cache_valid_time=1800
-  become: true
-
-- name: install packages
-  apt: name={{ item }} state=latest
-  become: true
-  with_items:
-    - nicotine
