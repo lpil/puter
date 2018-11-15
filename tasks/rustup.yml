@@ -15,11 +15,11 @@
   args:
     creates: ~/.cargo/bin/rg
 
-# syntax highlighted cat
-- name: Install bat
-  command: ~/.cargo/bin/cargo install bat
-  args:
-    creates: ~/.cargo/bin/bat
+# # syntax highlighted cat
+# - name: Install bat
+#   command: ~/.cargo/bin/cargo install bat
+#   args:
+#     creates: ~/.cargo/bin/bat
 
 # # Watching task runner for cargo
 # - name: Install cargo-watch
@@ -32,3 +32,9 @@
   command: ~/.cargo/bin/cargo install watchexec
   args:
     creates: ~/.cargo/bin/watchexec
+
+# tokei counts lines of code
+- name: Install tokei
+  command: ~/.cargo/bin/cargo install tokei
+  args:
+    creates: ~/.cargo/bin/tokei
