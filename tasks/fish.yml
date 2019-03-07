@@ -10,6 +10,11 @@
     state: latest
   become: true
 
+- name: Install fisher fish package manager
+  command: curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+  args:
+    creates: ~/.config/fish/functions/fisher.fish
+
 - name: Set fish as default shell
   command: "chsh -s /usr/bin/fish {{ username }}"
   become: true

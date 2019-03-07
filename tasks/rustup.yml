@@ -35,6 +35,6 @@
 
 # tokei counts lines of code
 - name: Install tokei
-  command: ~/.cargo/bin/cargo install tokei
+  command: ~/.cargo/bin/cargo install tokei --features all
   args:
     creates: ~/.cargo/bin/tokei
