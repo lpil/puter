@@ -8,7 +8,8 @@ Setting up a computer is annoying, so let's automate it.
 ## Usage
 
 ```sh
-./puter chromeos-debian-chroot.yml
+cd laptop
+puter chromeos-debian-chroot.yml
 ```
 
 Tada!
