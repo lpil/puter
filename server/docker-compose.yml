@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+
+  # Load balancer
+  #
+  traefik:
+    image: traefik:1.5.4
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.toml:/etc/traefik/traefik.toml
+      - ./acme.json:/etc/traefik/acme.json
+    container_name: traefik
+
+  # Fancy IRC web GUI
+  #
+  thelounge_irc:
+    image: thelounge/thelounge:3.0.1-alpine
+    container_name: thelounge_irc
+    networks:
+      - web
+    restart: always
+    volumes:
+      - ./thelounge:/var/opt/thelounge
+    labels:
+      - "traefik.docker.network=web"
+      - "traefik.enable=true"
+      - "traefik.thelounge_irc.frontend.rule=Host:irc.lpil.uk"
+      - "traefik.thelounge_irc.port=9000"
+      - "traefik.thelounge_irc.protocol=http"
+
+networks:
+  web:
