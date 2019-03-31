@@ -15,7 +15,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik.toml:/etc/traefik/traefik.toml
-      - ./acme.json:/etc/traefik/acme.json
+      - ~/data/acme.json:/etc/traefik/acme.json
     container_name: traefik
 
   # Fancy IRC web GUI
@@ -27,7 +27,7 @@ services:
       - web
     restart: always
     volumes:
-      - ./thelounge:/var/opt/thelounge
+      - ~/data/thelounge:/var/opt/thelounge
     labels:
       - "traefik.docker.network=web"
       - "traefik.enable=true"
