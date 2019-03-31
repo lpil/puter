@@ -51,6 +51,8 @@ services:
       - "traefik.ghost_pooky.frontend.rule=Host:pooky.lpil.uk"
       - "traefik.ghost_pooky.port=2368"
       - "traefik.ghost_pooky.protocol=http"
+    environment:
+      - url=pooky.lpil.uk
 
 
 networks:
