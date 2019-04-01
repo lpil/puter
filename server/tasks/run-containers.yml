@@ -1,0 +1,10 @@
+- name: Copy container config files
+  copy:
+    src: ./files/config
+    dest: /root/
+    mode: 0644
+
+- name: docker-compose up
+  shell: docker-compose up --detach
+  args:
+    chdir: /root/config

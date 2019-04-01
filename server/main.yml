@@ -8,6 +8,7 @@
   tasks:
     - include: tasks/docker.yml
     - include: tasks/docker-compose.yml
+    - include: tasks/run-containers.yml
 
   handlers:
     - include: handlers/all.yml
