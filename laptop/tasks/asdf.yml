@@ -68,3 +68,7 @@
   args:
     creates: ~/.asdf/plugins/pony
 
+- name: asdf Python
+  command: ~/.asdf/bin/asdf plugin-add python https://github.com/danhper/asdf-python
+  args:
+    creates: ~/.asdf/plugins/python
