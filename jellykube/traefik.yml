@@ -25,6 +25,7 @@ spec:
   chart: https://%{KUBERNETES_API}%/static/charts/traefik-1.64.0.tgz
   # |- is a multi-line string
   valuesContent: |-
+    generateTLS: true
     rbac:
       enabled: true
     dashboard:
@@ -36,8 +37,7 @@ spec:
       logging: true
       enabled: true
       email: "louis@lpil.uk"
-      # Perform letsencrypt challenge by making HTTP request to traefik
-      challengeType: http-01
+      challengeType: tls-alpn-01
       staging: true
       domains:
         enabled: true
@@ -45,6 +45,7 @@ spec:
         - main: "traefik.lpil.uk"
         - sans:
           - "jellykube.lpil.uk"
+          - "wibble.lpil.uk"
       persistence:
         enabled: true
         size: 10Mi
@@ -65,6 +66,12 @@ metadata:
     owner: lpil
 spec:
   rules:
+  - host: wibble.lpil.uk
+    http:
+      paths:
+      - backend:
+          serviceName: jellykube-test
+          servicePort: 80
   - host: jellykube.lpil.uk
     http:
       paths:
