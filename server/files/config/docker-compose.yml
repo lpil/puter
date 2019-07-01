@@ -35,6 +35,21 @@ services:
       - "traefik.thelounge_irc.port=9000"
       - "traefik.thelounge_irc.protocol=http"
 
+  # Hackathon!
+  #
+  happylabs:
+    image: lpil/happylabs-api-rust:7
+    container_name: happylabs
+    networks:
+      - web
+    restart: always
+    labels:
+      - "traefik.docker.network=web"
+      - "traefik.enable=true"
+      - "traefik.happylabs.frontend.rule=Host:happylabs.lpil.uk"
+      - "traefik.happylabs.port=3000"
+      - "traefik.happylabs.protocol=http"
+
   # Ghost blog for Pooky
   #
   ghost_pooky:
