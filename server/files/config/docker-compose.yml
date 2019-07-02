@@ -38,7 +38,7 @@ services:
   # Hackathon!
   #
   happylabs-frontend:
-    image: lpil/happylabs-frontend:1
+    image: lpil/happylabs-frontend:3
     container_name: happylabs-frontend
     networks:
       - web
@@ -53,7 +53,7 @@ services:
   # Hackathon!
   #
   happylabs-api:
-    image: lpil/happylabs-api-rust:9
+    image: lpil/happylabs-api-rust:10
     container_name: happylabs-api
     networks:
       - web
