@@ -37,18 +37,33 @@ services:
 
   # Hackathon!
   #
-  happylabs:
-    image: lpil/happylabs-api-rust:7
-    container_name: happylabs
+  happylabs-frontend:
+    image: lpil/happylabs-frontend:1
+    container_name: happylabs-frontend
     networks:
       - web
     restart: always
     labels:
       - "traefik.docker.network=web"
       - "traefik.enable=true"
-      - "traefik.happylabs.frontend.rule=Host:happylabs.lpil.uk"
-      - "traefik.happylabs.port=3000"
-      - "traefik.happylabs.protocol=http"
+      - "traefik.happylabs-frontend.frontend.rule=Host:happylabs.lpil.uk"
+      - "traefik.happylabs-frontend.port=80"
+      - "traefik.happylabs-frontend.protocol=http"
+
+  # Hackathon!
+  #
+  happylabs-api:
+    image: lpil/happylabs-api-rust:9
+    container_name: happylabs-api
+    networks:
+      - web
+    restart: always
+    labels:
+      - "traefik.docker.network=web"
+      - "traefik.enable=true"
+      - "traefik.happylabs-api.frontend.rule=Host:happylabs-api.lpil.uk"
+      - "traefik.happylabs-api.port=3000"
+      - "traefik.happylabs-api.protocol=http"
 
   # Ghost blog for Pooky
   #

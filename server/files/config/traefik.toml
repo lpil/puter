@@ -33,7 +33,7 @@ entryPoint = "http"
 
 [[acme.domains]]
 main = "irc.lpil.uk"
-sans = ["pooky.lpil.uk", "happylabs.lpil.uk"]
+sans = ["pooky.lpil.uk", "happylabs.lpil.uk", "happylabs-api.lpil.uk"]
 
 # [[acme.domains]]
 # main = "*.project.com"
