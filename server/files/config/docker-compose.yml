@@ -53,7 +53,7 @@ services:
   # Hackathon!
   #
   happylabs-api:
-    image: lpil/happylabs-api-rust:10
+    image: lpil/happylabs-api-rust:11
     container_name: happylabs-api
     networks:
       - web
