@@ -1,5 +1,5 @@
 - set_fact:
-    neovim_version: 0.3.4
+    neovim_version: 0.3.8
 
 - name: Create Neovim dirs
   file:
