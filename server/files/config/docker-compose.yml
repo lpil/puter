@@ -65,24 +65,5 @@ services:
       - "traefik.happylabs-api.port=3000"
       - "traefik.happylabs-api.protocol=http"
 
-  # Ghost blog for Pooky
-  #
-  ghost_pooky:
-    image: ghost:2.19.1-alpine
-    container_name: ghost_pooky
-    networks:
-      - web
-    restart: always
-    volumes:
-      - ~/data/ghost_pooky:/var/lib/ghost/content
-    labels:
-      - "traefik.docker.network=web"
-      - "traefik.enable=true"
-      - "traefik.ghost_pooky.frontend.rule=Host:pooky.lpil.uk"
-      - "traefik.ghost_pooky.port=2368"
-      - "traefik.ghost_pooky.protocol=http"
-    environment:
-      - "url=https://pooky.lpil.uk"
-
 networks:
   web:
