@@ -9,6 +9,7 @@
 
   tasks:
     - include: tasks/debian-packages.yml
+    - include: tasks/debian-gui-packages.yml
     - include: tasks/dotfiles.yml
     - include: tasks/awscli.yml
     - include: tasks/gcp-sdk.yml
@@ -23,6 +24,7 @@
     - include: tasks/neovim.yml
     - include: tasks/src.yml
     - include: tasks/stack.yml
+    - include: tasks/docker.yml
     - include: tasks/fzf.yml
 
   handlers:

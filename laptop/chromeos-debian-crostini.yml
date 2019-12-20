@@ -24,7 +24,6 @@
     - include: tasks/neovim.yml
     - include: tasks/src.yml
     - include: tasks/stack.yml
-    - include: tasks/test-internet.yml
     - include: tasks/docker.yml
     - include: tasks/fzf.yml
 

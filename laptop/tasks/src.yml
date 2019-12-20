@@ -1,21 +1,62 @@
-- name: Create ~/src/
-  file:
-    path: ~/src/
-    state: directory
-    mode: 0700
-
 - name: Fetch git repos
   git:
     repo: "{{ item['url'] }}"
     dest: "~/src/{{ item['path'] }}"
+    update: false
   with_items:
-    - url: git@github.com:lpil/gleam.git
-      path: gleam
-    - url: git@github.com:lpil/gleam.vim.git
-      path: gleam.vim
+
+    # Gleam
+    - url: git@github.com:gleam-lang/gleam.git
+      path: gleam/gleam
+    - url: git@github.com:gleam-lang/stdlib.git
+      path: gleam/stdlib
+    - url: git@github.com:gleam-lang/example-url-shortener.git
+      path: gleam/example-url-shortener
+    - url: git@github.com:gleam-lang/website.git
+      path: gleam/website
+    - url: git@github.com:gleam-lang/http.git
+      path: gleam/http
+    - url: git@github.com:gleam-experiments/io.git
+      path: gleam/io
+    - url: git@github.com:gleam-experiments/otp_process.git
+      path: gleam/otp_process
+    - url: git@github.com:gleam-experiments/otp_supervisor.git
+      path: gleam/otp_supervisor
+    - url: git@github.com:gleam-experiments/pgo.git
+      path: gleam/pgo
+    - url: git@github.com:gleam-experiments/experiments.git
+      path: gleam/experiments
+    - url: git@github.com:gleam-experiments/iterator.git
+      path: gleam/iterator
+
+    # Waive
     - url: git@github.com:lpil/waive.git
-      path: waive
+      path: waive/waive
+
+    # lpil
     - url: git@github.com:lpil/learning.git
-      path: learning
-    - url: git@github.com:lpil/moriartydecor.git
-      path: moriartydecor
+      path: lpil/learning
+    - url: git@github.com:lpil/lpil.github.io.git
+      path: lpil/lpil.github.io
+    - url: git@github.com:lpil/puter.git
+      path: lpil/puter
+    - url: git@github.com:lpil/talk-slides.git
+      path: lpil/talk-slides
+
+    # Art
+    - url: git@github.com:lpil/sonic-pi-tool.git
+      path: art/sonic-pi-tool
+
+    # Elixir
+    - url: git@github.com:elixir-lang/elixir.git
+      path: elixir/elixir
+    - url: git@github.com:lpil/mix-test.watch.git
+      path: elixir/mix-test.watch.git
+
+    # Erlang
+    - url: git@github.com:erlang/otp.git
+      path: erlang/otp
+    - url: git@github.com:elli-lib/elli.git
+      path: erlang/elli
+    - url: git@github.com:erleans/pgo.git
+      path: erlang/pgo
