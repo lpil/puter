@@ -3,6 +3,11 @@
   args:
     creates: ~/.cargo/bin/rustup
 
+- name: Install Rust language server
+  command: rustup component add rls rust-analysis rust-src
+  args:
+    creates: ~/.cargo/bin/rls
+
 # find alternative
 - name: Install fd
   command: ~/.cargo/bin/cargo install fd-find
@@ -14,18 +19,6 @@
   command: ~/.cargo/bin/cargo install ripgrep
   args:
     creates: ~/.cargo/bin/rg
-
-# # syntax highlighted cat
-# - name: Install bat
-#   command: ~/.cargo/bin/cargo install bat
-#   args:
-#     creates: ~/.cargo/bin/bat
-
-# # Watching task runner for cargo
-# - name: Install cargo-watch
-#   command: ~/.cargo/bin/cargo install cargo-watch
-#   args:
-#     creates: ~/.cargo/bin/cargo-watch
 
 # Generic watching task runner
 - name: Install watchexec

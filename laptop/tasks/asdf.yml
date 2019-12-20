@@ -48,27 +48,17 @@
   args:
     creates: ~/.asdf/plugins/ocaml
 
-- name: asdf Postgresql
-  command: ~/.asdf/bin/asdf plugin-add postgres https://github.com/smashedtoatoms/asdf-postgres
-  args:
-    creates: ~/.asdf/plugins/postgres
-
 - name: asdf Golang
   command: ~/.asdf/bin/asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
   args:
     creates: ~/.asdf/plugins/golang
 
-- name: asdf Crystal
-  command: ~/.asdf/bin/asdf plugin-add crystal https://github.com/marciogm/asdf-crystal.git
-  args:
-    creates: ~/.asdf/plugins/crystal
-
-- name: asdf Pony
-  command: ~/.asdf/bin/asdf plugin-add pony https://github.com/enilsen16/asdf-pony.git
-  args:
-    creates: ~/.asdf/plugins/pony
-
 - name: asdf Python
   command: ~/.asdf/bin/asdf plugin-add python https://github.com/danhper/asdf-python
   args:
     creates: ~/.asdf/plugins/python
+
+- name: asdf Kubectl
+  command: ~/.asdf/bin/asdf plugin-add kubectl https://github.com/banno/asdf-kubectl
+  args:
+    creates: ~/.asdf/plugins/kubectl
