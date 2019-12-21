@@ -31,3 +31,9 @@
   command: ~/.cargo/bin/cargo install tokei --features all
   args:
     creates: ~/.cargo/bin/tokei
+
+# markdown documentation site generator
+- name: Install mdbook
+  command: ~/.cargo/bin/cargo install mdbook
+  args:
+    creates: ~/.cargo/bin/mdbook
