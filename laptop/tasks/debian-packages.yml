@@ -41,6 +41,7 @@
     - libreadline-dev
     - libssl-dev
     - libtool-bin
+    - libvips-tools
     - lltag
     - llvm
     - man-db
@@ -48,7 +49,6 @@
     - moreutils
     - mpv
     - ncdu
-    - postgresql # Ideally we'd manage this with docker but it's not possible yet
     - psmisc
     - python3-pip
     - rsync
