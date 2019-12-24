@@ -62,3 +62,7 @@
       path: erlang/elli
     - url: git@github.com:erleans/pgo.git
       path: erlang/pgo
+
+    # Exercism
+    - url: git@github.com:exercism/gleam.git
+      path: exercism/gleam
