@@ -30,6 +30,8 @@
       path: gleam/experiments
     - url: git@github.com:gleam-experiments/iterator.git
       path: gleam/iterator
+    - url: git@github.com:gleam-experiments/elli.git
+      path: gleam/elli
 
     # Waive
     - url: git@github.com:lpil/waive.git
