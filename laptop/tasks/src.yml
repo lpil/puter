@@ -22,6 +22,8 @@
       path: gleam/io
     - url: git@github.com:gleam-experiments/otp_process.git
       path: gleam/otp_process
+    - url: git@github.com:gleam-experiments/otp_agent.git
+      path: gleam/otp_agent
     - url: git@github.com:gleam-experiments/otp_supervisor.git
       path: gleam/otp_supervisor
     - url: git@github.com:gleam-experiments/pgo.git
