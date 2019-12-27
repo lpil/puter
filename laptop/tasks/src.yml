@@ -16,6 +16,8 @@
       path: gleam/website
     - url: git@github.com:gleam-lang/http.git
       path: gleam/http
+    - url: git@github.com:gleam-lang/awesome-gleam.git
+      path: gleam/awesome-gleam
     - url: git@github.com:gleam-lang/bitwise.git
       path: gleam/bitwise
     - url: git@github.com:gleam-experiments/io.git
