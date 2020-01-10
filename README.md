@@ -9,7 +9,7 @@ Setting up a computer is annoying, so let's automate it.
 
 ```sh
 cd laptop
-puter chromeos-debian-chroot.yml
+puter ubuntu.yml
 ```
 
 Tada!

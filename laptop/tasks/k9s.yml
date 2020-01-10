@@ -1,0 +1,7 @@
+# https://github.com/derailed/k9s/releases
+- name: Install k9s
+  unarchive:
+    src: https://github.com/derailed/k9s/releases/download/0.11.3/k9s_0.11.3_Linux_arm64.tar.gz
+    dest: ~/bin
+    remote_src: yes
+    creates: /home/{{ username }}/bin/k9s

@@ -26,6 +26,7 @@
     - include: tasks/stack.yml
     - include: tasks/docker.yml
     - include: tasks/fzf.yml
+    - include: tasks/k9s.yml
 
   handlers:
     - include: handlers/all.yml
