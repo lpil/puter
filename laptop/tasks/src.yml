@@ -61,7 +61,9 @@
     - url: git@github.com:elixir-lang/elixir.git
       path: elixir/elixir
     - url: git@github.com:lpil/mix-test.watch.git
-      path: elixir/mix-test.watch.git
+      path: elixir/mix-test.watch
+    - url: git@github.com:lpil/elixre.git
+      path: elixir/elixre
 
     # Erlang
     - url: git@github.com:erlang/otp.git
