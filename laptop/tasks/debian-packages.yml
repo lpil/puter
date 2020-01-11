@@ -54,6 +54,7 @@
     - rtorrent
     - speedtest-cli
     - spell
+    - sqlite3
     - tmux
     - toilet
     - tree
