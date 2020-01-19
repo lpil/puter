@@ -76,3 +76,7 @@
     # Exercism
     - url: git@github.com:exercism/gleam.git
       path: exercism/gleam
+
+    # Hackathing
+    - url: git@github.com:hackathing/puck.git
+      path: hackathing/puck
