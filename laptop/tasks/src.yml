@@ -22,6 +22,10 @@
       path: gleam/bitwise
     - url: git@github.com:gleam-experiments/io.git
       path: gleam/io
+    - url: git@github.com:gleam-experiments/httpc.git
+      path: gleam/httpc
+    - url: git@github.com:gleam-experiments/bbmustache.git
+      path: gleam/bbmustache
     - url: git@github.com:gleam-experiments/otp_process.git
       path: gleam/otp_process
     - url: git@github.com:gleam-experiments/otp_agent.git
