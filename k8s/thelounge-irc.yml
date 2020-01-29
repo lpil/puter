@@ -1,5 +1,3 @@
-# TODO: HTTPS
-
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -10,23 +8,27 @@ metadata:
     owner: lpil
 
 ---
-apiVersion: extensions/v1beta1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
-  namespace: thelounge-irc
   name: thelounge-irc
+  namespace: thelounge-irc
   labels:
     env: prod
     app: thelounge-irc
     owner: lpil
 spec:
-  rules:
-  - host: irc.lpil.uk
-    http:
-      paths:
-      - backend:
-          serviceName: thelounge-irc
-          servicePort: 80
+  entryPoints:
+    - web
+    - websecure
+  routes:
+  - match: Host(`irc.lpil.uk`)
+    kind: Rule
+    services:
+    - name: thelounge-irc
+      port: 80
+  tls:
+    certResolver: default
 
 ---
 apiVersion: v1
@@ -43,7 +45,6 @@ spec:
     env: prod
     app: thelounge-irc
     role: webserver
-  type: NodePort
   ports:
   - name: http
     port: 80

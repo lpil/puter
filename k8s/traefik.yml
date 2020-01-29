@@ -130,38 +130,25 @@ subjects:
     name: traefik-ingress-controller
     namespace: kube-system
 
-# ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: traefik
-
-# spec:
-#   ports:
-#     - protocol: TCP
-#       name: web
-#       port: 8000
-#     - protocol: TCP
-#       name: admin
-#       port: 8080
-#     - protocol: TCP
-#       name: websecure
-#       port: 4443
-#   selector:
-#     app: traefik
-
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: whoami
+  namespace: kube-system
+  name: traefik
 spec:
   ports:
     - protocol: TCP
       name: web
-      port: 80
+      port: 8000
+    - protocol: TCP
+      name: admin
+      port: 8080
+    - protocol: TCP
+      name: websecure
+      port: 4443
   selector:
-    app: whoami
+    app: traefik
 
 ---
 apiVersion: v1
@@ -172,7 +159,7 @@ metadata:
 
 ---
 kind: Deployment
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 metadata:
   namespace: kube-system
   name: traefik
@@ -220,7 +207,7 @@ spec:
 
 ---
 kind: Deployment
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 metadata:
   namespace: default
   name: whoami
@@ -242,37 +229,3 @@ spec:
           ports:
             - name: web
               containerPort: 80
-
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: simpleingressroute
-  namespace: default
-spec:
-  entryPoints:
-    - web
-  routes:
-  - match: Host(`hotpot.lpil.uk`) && PathPrefix(`/notls`)
-    kind: Rule
-    services:
-    - name: whoami
-      port: 80
-
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: ingressroutetls
-  namespace: default
-spec:
-  entryPoints:
-    - websecure
-  routes:
-  - match: Host(`hotpot.lpil.uk`) && PathPrefix(`/tls`)
-    kind: Rule
-    services:
-    - name: whoami
-      port: 80
-  tls:
-    certResolver: default
