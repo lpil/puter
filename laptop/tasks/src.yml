@@ -60,6 +60,8 @@
     # Art
     - url: git@github.com:lpil/sonic-pi-tool.git
       path: art/sonic-pi-tool
+    - url: git@github.com:lpil/art.git
+      path: art/art
 
     # Elixir
     - url: git@github.com:elixir-lang/elixir.git
