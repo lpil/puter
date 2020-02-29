@@ -3,6 +3,7 @@
     repo: "{{ item['url'] }}"
     dest: "~/src/{{ item['path'] }}"
     update: false
+    refspec: "master"
   with_items:
 
     # Gleam
