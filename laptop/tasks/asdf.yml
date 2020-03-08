@@ -62,3 +62,8 @@
   command: ~/.asdf/bin/asdf plugin-add kubectl https://github.com/banno/asdf-kubectl
   args:
     creates: ~/.asdf/plugins/kubectl
+
+- name: asdf Gleam
+  command: ~/.asdf/bin/asdf plugin-add gleam https://github.com/vic/asdf-gleam
+  args:
+    creates: ~/.asdf/plugins/gleam
