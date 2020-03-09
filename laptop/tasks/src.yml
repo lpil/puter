@@ -21,6 +21,8 @@
       path: gleam/awesome-gleam
     - url: git@github.com:gleam-lang/bitwise.git
       path: gleam/bitwise
+    - url: git@github.com:gleam-lang/gleam-mode.git
+      path: gleam/emacs-gleam-mode
     - url: git@github.com:gleam-experiments/io.git
       path: gleam/io
     - url: git@github.com:gleam-experiments/httpc.git
