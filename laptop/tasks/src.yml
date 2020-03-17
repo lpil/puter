@@ -89,3 +89,7 @@
     # Hackathing
     - url: git@github.com:hackathing/puck.git
       path: hackathing/puck
+
+    # FetLife
+    - url: git@github.com:fetlife/fetlife-web.git
+      path: fetlife/fetlife-web
