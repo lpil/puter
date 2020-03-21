@@ -21,7 +21,6 @@
     - autoconf
     - autojump
     - build-essential
-    - clang-format
     - cloc
     - cmake
     - cowsay
@@ -52,12 +51,14 @@
     - python3-pip
     - rsync
     - rtorrent
+    - shellcheck
     - speedtest-cli
     - spell
     - sqlite3
     - tmux
     - toilet
     - tree
+    - vagrant
     - w3m
     - wget
     - xsel
