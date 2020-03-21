@@ -27,4 +27,4 @@ command -v aptitude  >/dev/null 2>&1 || {
   sudo apt-get install aptitude
 }
 
-ansible-playbook $1 -i hosts.ini --ask-become-pass --diff -v
+ansible-playbook "$1" -i hosts.ini --ask-become-pass --diff -v
