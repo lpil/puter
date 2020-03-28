@@ -27,6 +27,7 @@
     - include: tasks/docker.yml
     - include: tasks/fzf.yml
     - include: tasks/k9s.yml
+    - include: tasks/duplicacy.yml
 
   handlers:
     - include: handlers/all.yml

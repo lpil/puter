@@ -1,0 +1,5 @@
+- name: Install duplicacy
+  get_url:
+    url: https://github.com/gilbertchen/duplicacy/releases/download/v2.4.1/duplicacy_linux_x64_2.4.1
+    dest: /home/{{ username }}/bin/duplicacy
+    mode: 0700
