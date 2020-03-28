@@ -60,6 +60,10 @@
     - url: git@github.com:lpil/talk-slides.git
       path: lpil/talk-slides
 
+    # xwax
+    - url: git@github.com:xwax/xwax.github.io.git
+      path: xwax/xwax.github.io
+
     # Art
     - url: git@github.com:lpil/sonic-pi-tool.git
       path: art/sonic-pi-tool
