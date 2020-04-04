@@ -6,7 +6,7 @@ require_relative "../http_client"
 class Component::Nginx < Component
   def install
     if Apt.installed?("nginx")
-      log "Already installed"
+      log "nginx already installed"
       return
     end
 

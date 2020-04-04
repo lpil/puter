@@ -1,4 +1,4 @@
-
+require_relative "../persistence"
 require_relative "../component"
 require_relative "../systemd"
 require_relative "../shell"
@@ -10,7 +10,7 @@ class Component::Certbot < Component
     Systemd.assert_running("nginx")
 
     if Apt.installed?("python-certbot-nginx")
-      log "Already installed"
+      log "Certbot already installed"
     else
       log "Adding certbot apt repository"
       Apt.add_repository("ppa:certbot/certbot")
@@ -19,6 +19,9 @@ class Component::Certbot < Component
       Apt.install("python-certbot-nginx")
     end
 
+    log "Creating symlink for data directory backup"
+    Persistence.create_backed_up_directory("letsencrypt", path: "/etc/letsencrypt")
+
     log "Running certbot"
     Shell.exec_print(certbot_command(domains))
   end
@@ -26,6 +29,6 @@ class Component::Certbot < Component
   private
 
   def certbot_command(domains)
-    "certbot certonly -n --nginx #{domains.map { |h| "-d #{h}" }.join(" ")}"
+    "certbot certonly -q -n --nginx #{domains.map { |h| "-d #{h}" }.join(" ")}"
   end
 end

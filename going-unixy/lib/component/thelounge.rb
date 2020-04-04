@@ -18,7 +18,7 @@ class Component::Thelounge < Component
     Apt.assert_installed("podman")
 
     if File.exist?(NGINX_CONFIG)
-      log "Already installed"
+      log "Thelounge already installed"
     else
       log "Creating data directory #{DATA_DIR}"
       Shell.exec_print("mkdir -p #{DATA_DIR}")

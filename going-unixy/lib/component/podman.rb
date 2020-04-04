@@ -4,7 +4,7 @@ require_relative "../apt"
 class Component::Podman < Component
   def install
     if Apt.installed?("podman")
-      log "Already installed"
+      log "Podman already installed"
       return
     end
 
