@@ -23,7 +23,7 @@ echo "Copying puter scripts to host"
 scp -r "$PWD" "$HOST:$SCRIPTS_PATH"
 
 echo "Ensuring Ruby is installed on the host"
-ssh "$HOST" "apt-get update -qq && apt-get install -qq ruby --yes"
+ssh "$HOST" "command -v ruby > /dev/null || apt-get update -qq && apt-get install -qq ruby --yes"
 
 echo "Running scripts on host"
 ssh "$HOST" "ruby $SCRIPTS_PATH/lib/main.rb"

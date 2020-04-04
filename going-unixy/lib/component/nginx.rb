@@ -5,7 +5,12 @@ require_relative "../http_client"
 
 class Component::Nginx < Component
   def install
-    log "Ensuring nginx package is installed"
+    if Apt.installed?("nginx")
+      log "Already installed"
+      return
+    end
+
+    log "Installing nginx"
     Apt.install("nginx")
 
     log "Ensuring systemd unit nginx is running"
