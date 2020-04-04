@@ -10,26 +10,31 @@ class Component::Thelounge < Component
   DATA_DIR = "/var/opt/thelounge"
   NGINX_CONFIG = "/etc/nginx/sites-enabled/thelounge"
 
-  def install(irc_host:)
+  def install(host:)
+    log "Ensuring nginx is running"
+    Systemd.assert_running("nginx")
+
+    log "Ensuring podman is installed"
+    Apt.assert_installed("podman")
+
     if File.exist?(NGINX_CONFIG)
       log "Already installed"
-      return
+    else
+      log "Creating data directory #{DATA_DIR}"
+      Shell.exec_print("mkdir -p #{DATA_DIR}")
+
+      log "Running container"
+      Shell.exec_print(run_container_command)
     end
 
-    log "Creating data directory #{DATA_DIR}"
-    Shell.exec_print("mkdir -p #{DATA_DIR}")
-
-    log "Running container"
-    Shell.exec_print(run_container_command)
-
     log "Writing nginx config #{NGINX_CONFIG}"
-    File.write(NGINX_CONFIG, nginx_config)
+    File.write(NGINX_CONFIG, nginx_config(host))
 
     log "Reloading nginx"
     Shell.exec_print("systemctl reload nginx")
 
-    log "Ensuring #{irc_host} is being served"
-    HttpClient.assert_200(irc_host)
+    log "Ensuring #{host} is being served"
+    HttpClient.assert_200("https://" + host)
   end
 
   private
@@ -45,15 +50,10 @@ class Component::Thelounge < Component
     "
   end
 
-  def nginx_config
+  def nginx_config(host)
     "
 server {
-  listen 80;
-  listen [::]:80;
-  # listen 443;
-  # listen [::]:443;
-
-  server_name irc-2.lpil.uk;
+  server_name #{host};
 
   location / {
     proxy_pass http://127.0.0.1:#{PORT}/;
@@ -66,6 +66,27 @@ server {
     # by default nginx times out connections in one minute
     proxy_read_timeout 1d;
   }
-}\n"
+
+  # HTTPS using certbot provisioned cert
+  listen [::]:443 ssl ipv6only=on;
+  listen 443 ssl;
+  ssl_certificate /etc/letsencrypt/live/#{host}/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/#{host}/privkey.pem;
+  include /etc/letsencrypt/options-ssl-nginx.conf;
+  ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+}
+
+server {
+  if ($host = #{host}) {
+    return 301 https://$host$request_uri;
+  }
+
+  listen 80;
+  listen [::]:80;
+
+  server_name #{host};
+  return 404;
+}
+"
   end
 end

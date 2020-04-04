@@ -1,11 +1,7 @@
 class Component
-  def self.install
-    self.new.install
-  end
-
   private
 
   def log(msg)
-    puts "#{self.class.name}> #{msg}"
+    puts "\e[1;34m#{self.class.name}>\e[0m #{msg}"
   end
 end

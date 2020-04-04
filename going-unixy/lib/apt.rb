@@ -12,4 +12,8 @@ module Apt
   def self.assert_installed(package)
     raise "apt package #{package} is not installed" unless installed?(package)
   end
+
+  def self.add_repository(repo)
+    Shell.exec_print("add-apt-repository #{repo}")
+  end
 end
