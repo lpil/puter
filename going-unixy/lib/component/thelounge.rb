@@ -1,8 +1,14 @@
-
+require_relative "../container"
 require_relative "../component"
 require_relative "../systemd"
 require_relative "../shell"
 require_relative "../http_client"
+
+#
+#
+# TODO: https://podman.io/blogs/2018/09/13/systemd.html
+#
+#
 
 class Component::Thelounge < Component
   PORT = 8000
@@ -17,14 +23,14 @@ class Component::Thelounge < Component
     log "Ensuring podman is installed"
     Apt.assert_installed("podman")
 
-    if File.exist?(NGINX_CONFIG)
-      log "Thelounge already installed"
+    if Container.exists?("thelounge")
+      log "Thelounge container already exists"
     else
       log "Creating data directory #{DATA_DIR}"
       Shell.exec_print("mkdir -p #{DATA_DIR}")
 
-      log "Running container"
-      Shell.exec_print(run_container_command)
+      log "Creating container"
+      Shell.exec_print(create_container_command)
     end
 
     log "Writing nginx config #{NGINX_CONFIG}"
@@ -39,7 +45,7 @@ class Component::Thelounge < Component
 
   private
 
-  def run_container_command
+  def create_container_command
     "
     podman run --detach \
       --name thelounge \
