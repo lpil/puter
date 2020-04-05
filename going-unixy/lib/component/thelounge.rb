@@ -1,20 +1,17 @@
 require_relative "../container"
+require_relative "../project_files"
+require_relative "../persistence"
 require_relative "../component"
 require_relative "../systemd"
 require_relative "../shell"
 require_relative "../http_client"
 
-#
-#
-# TODO: https://podman.io/blogs/2018/09/13/systemd.html
-#
-#
-
 class Component::Thelounge < Component
   PORT = 8000
-  IMAGE_TAG = "4.1.0-alpine"
+  IMAGE_TAG = "3.0.1-alpine"
   DATA_DIR = "/var/opt/thelounge"
   NGINX_CONFIG = "/etc/nginx/sites-enabled/thelounge"
+  CONFIG_PATH = "#{DATA_DIR}/config.js"
 
   def install(host:)
     log "Ensuring nginx is running"
@@ -22,6 +19,9 @@ class Component::Thelounge < Component
 
     log "Ensuring podman is installed"
     Apt.assert_installed("podman")
+
+    log "Writing #{CONFIG_PATH}"
+    ProjectFiles.write("thelounge-config.js", to: CONFIG_PATH)
 
     if Container.exists?("thelounge")
       log "Thelounge container already exists"
@@ -31,6 +31,9 @@ class Component::Thelounge < Component
 
       log "Creating container"
       Shell.exec_print(create_container_command)
+
+      log "Ensuring localhost:#{PORT} is being served"
+      HttpClient.assert_200("http://localhost:#{PORT}")
     end
 
     log "Writing nginx config #{NGINX_CONFIG}"
@@ -40,7 +43,7 @@ class Component::Thelounge < Component
     Shell.exec_print("systemctl reload nginx")
 
     log "Ensuring #{host} is being served"
-    HttpClient.assert_200("https://" + host)
+    HttpClient.assert_200("https://#{host}")
   end
 
   private
@@ -50,7 +53,8 @@ class Component::Thelounge < Component
     podman run --detach \
       --name thelounge \
       --publish #{PORT}:9000 \
-      --volume #{DATA_DIR}:/var/opt/thelounge \
+      --mount type=bind,source=#{DATA_DIR},target=#{DATA_DIR} \
+      --mount type=bind,source=#{Persistence::REPO}/thelounge-users,target=#{DATA_DIR}/users \
       --restart always \
       thelounge/thelounge:#{IMAGE_TAG}
     "
