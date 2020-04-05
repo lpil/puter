@@ -5,7 +5,7 @@ require_relative "./component/thelounge"
 require_relative "./component/certbot"
 
 hosts = [
-  irc_host = "irc-3.lpil.uk",
+  irc_host = "irc.lpil.uk",
 ]
 
 Component::Duplicacy.new.install

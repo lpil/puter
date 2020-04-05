@@ -12,15 +12,15 @@ class Component::Certbot < Component
     if Apt.installed?("python-certbot-nginx")
       log "Certbot already installed"
     else
+      log "Creating symlink for data directory backup"
+      Persistence.create_backed_up_directory("letsencrypt", path: "/etc/letsencrypt")
+
       log "Adding certbot apt repository"
       Apt.add_repository("ppa:certbot/certbot")
 
       log "Installing certbot and nginx plugin"
       Apt.install("python-certbot-nginx")
     end
-
-    log "Creating symlink for data directory backup"
-    Persistence.create_backed_up_directory("letsencrypt", path: "/etc/letsencrypt")
 
     log "Running certbot"
     Shell.exec_print(certbot_command(domains))

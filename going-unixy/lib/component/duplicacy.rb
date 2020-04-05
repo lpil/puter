@@ -1,3 +1,4 @@
+require 'fileutils'
 require_relative "../../secrets"
 require_relative "../persistence"
 require_relative "../component"
@@ -25,6 +26,7 @@ class Component::Duplicacy < Component
       log "Repo already created"
     else
       log "Creating repo"
+      FileUtils.mkdir_p(Persistence::REPO)
       Shell.exec_print(in_repo("duplicacy init server-data b2://lpil-server-data"))
 
       log "Looking up latest backup revision"
