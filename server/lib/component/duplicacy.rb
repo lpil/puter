@@ -4,6 +4,7 @@ require_relative "../persistence"
 require_relative "../component"
 require_relative "../apt"
 require_relative "../systemd"
+require_relative "../systemd/calendar_timer"
 require_relative "../http_client"
 
 class Component::Duplicacy < Component
@@ -35,6 +36,18 @@ class Component::Duplicacy < Component
       log "Restoring latest backup (#{revision})"
       Shell.exec_print(in_repo("duplicacy restore -r #{revision}"))
     end
+
+    log "Installing systemd timer for backups"
+    Systemd::CalendarTimer.new(
+      name: "duplicacy_backup",
+      command: "#{BINARY_PATH} backup -stats -threads 4",
+      calendar: "daily",
+      workdir: Persistence::REPO,
+      env_vars: {
+        DUPLICACY_B2_ID: Secrets::BACKBLAZE_KEY_ID,
+        DUPLICACY_B2_KEY: Secrets::BACKBLAZE_APPLICATION_KEY,
+      }
+    ).install
   end
 
   private
