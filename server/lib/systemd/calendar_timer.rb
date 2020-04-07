@@ -24,6 +24,7 @@ class Systemd::CalendarTimer
   end
 
   def install
+    FileUtils.mkdir_p("/usr/lib/systemd/system")
     File.write("/usr/lib/systemd/system/#{@name}.service", "
 [Unit]
 Description=#{@name}
