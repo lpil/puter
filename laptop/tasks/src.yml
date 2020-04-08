@@ -97,5 +97,7 @@
     # FetLife
     - url: git@github.com:fetlife/fetlife-web.git
       path: fetlife/fetlife-web
+    - url: git@github.com:fetlife/community.git
+      path: fetlife/community
     - url: git@github.com:fetlife/johnny5.git
       path: fetlife/johnny5
