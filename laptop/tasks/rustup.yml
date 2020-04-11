@@ -37,3 +37,10 @@
   command: ~/.cargo/bin/cargo install mdbook
   args:
     creates: ~/.cargo/bin/mdbook
+
+# Rust Analyzer language server
+- name: Download rust-analyzer
+  get_url:
+    url: https://github.com/rust-analyzer/rust-analyzer/releases/download/2020-04-06/rust-analyzer-linux
+    dest: ~/bin/rust-analyzer
+    mode: 0700
