@@ -101,3 +101,5 @@
       path: fetlife/community
     - url: git@github.com:fetlife/johnny5.git
       path: fetlife/johnny5
+    - url: git@github.com:fetlife/translations.git
+      path: fetlife/translations
