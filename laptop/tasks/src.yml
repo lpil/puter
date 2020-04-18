@@ -59,6 +59,8 @@
       path: lpil/puter
     - url: git@github.com:lpil/talk-slides.git
       path: lpil/talk-slides
+    - url: git@github.com:robinprospect/changeitup.git
+      path: lpil/changeitup
 
     # xwax
     - url: git@github.com:xwax/xwax.github.io.git
