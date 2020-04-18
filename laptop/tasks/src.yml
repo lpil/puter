@@ -77,6 +77,8 @@
       path: elixir/mix-test.watch
     - url: git@github.com:lpil/elixre.git
       path: elixir/elixre
+    - url: git@github.com:lpil/yesql.git
+      path: elixir/yesql
 
     # Erlang
     - url: git@github.com:erlang/otp.git
