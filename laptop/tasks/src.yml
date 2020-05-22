@@ -89,6 +89,8 @@
       path: erlang/elli
     - url: git@github.com:erleans/pgo.git
       path: erlang/pgo
+    - url: git@github.com:gleam-lang/setup-erlang.git
+      path: erlang/setup-erlang
 
     # Exercism
     - url: git@github.com:exercism/gleam.git
