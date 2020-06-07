@@ -61,6 +61,8 @@
       path: lpil/talk-slides
     - url: git@github.com:lpil/cv.git
       path: lpil/cv
+    - url: git@github.com:lpil/trail.git
+      path: lpil/trail
 
     # xwax
     - url: git@github.com:xwax/xwax.github.io.git
