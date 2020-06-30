@@ -45,6 +45,8 @@
       path: gleam/iterator
     - url: git@github.com:gleam-experiments/elli.git
       path: gleam/elli
+    - url: git@github.com:gleam-experiments/crypto.git
+      path: gleam/crypto
 
     # Waive
     - url: git@github.com:lpil/waive.git
@@ -97,17 +99,3 @@
     # Exercism
     - url: git@github.com:exercism/gleam.git
       path: exercism/gleam
-
-    # Hackathing
-    - url: git@github.com:hackathing/puck.git
-      path: hackathing/puck
-
-    # FetLife
-    - url: git@github.com:fetlife/fetlife-web.git
-      path: fetlife/fetlife-web
-    - url: git@github.com:fetlife/community.git
-      path: fetlife/community
-    - url: git@github.com:fetlife/johnny5.git
-      path: fetlife/johnny5
-    - url: git@github.com:fetlife/translations.git
-      path: fetlife/translations
