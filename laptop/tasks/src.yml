@@ -99,3 +99,7 @@
     # Exercism
     - url: git@github.com:exercism/gleam.git
       path: exercism/gleam
+
+    # Ad-Signal
+    - url: git@github.com:ad-signalio/ad_signal.git
+      path: ad-signal/ad-signal
