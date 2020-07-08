@@ -103,3 +103,5 @@
     # Ad-Signal
     - url: git@github.com:ad-signalio/ad_signal.git
       path: ad-signal/ad-signal
+    - url: git@github.com:ad-signalio/gowatcher.git
+      path: ad-signal/gowatcher
