@@ -11,8 +11,8 @@
       path: gleam/gleam
     - url: git@github.com:gleam-lang/stdlib.git
       path: gleam/stdlib
-    - url: git@github.com:gleam-lang/example-url-shortener.git
-      path: gleam/example-url-shortener
+    - url: git@github.com:gleam-lang/example-echo-server.git
+      path: gleam/example-echo-server
     - url: git@github.com:gleam-lang/website.git
       path: gleam/website
     - url: git@github.com:gleam-lang/http.git
