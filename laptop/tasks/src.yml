@@ -105,3 +105,5 @@
       path: ad-signal/ad-signal
     - url: git@github.com:ad-signalio/gowatcher.git
       path: ad-signal/gowatcher
+    - url: git@github.com:ad-signalio/cvImageHash.git
+      path: ad-signal/cvImageHash
