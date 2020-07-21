@@ -23,8 +23,6 @@
       path: gleam/bitwise
     - url: git@github.com:gleam-lang/gleam-mode.git
       path: gleam/emacs-gleam-mode
-    - url: git@github.com:gleam-experiments/io.git
-      path: gleam/io
     - url: git@github.com:gleam-experiments/httpc.git
       path: gleam/httpc
     - url: git@github.com:gleam-experiments/bbmustache.git
@@ -39,8 +37,6 @@
       path: gleam/pgo
     - url: git@github.com:gleam-experiments/experiments.git
       path: gleam/experiments
-    - url: git@github.com:gleam-experiments/iterator.git
-      path: gleam/iterator
     - url: git@github.com:gleam-experiments/elli.git
       path: gleam/elli
     - url: git@github.com:gleam-experiments/crypto.git
