@@ -29,8 +29,6 @@
       path: gleam/bbmustache
     - url: git@github.com:gleam-experiments/otp.git
       path: gleam/otp
-    - url: git@github.com:gleam-experiments/otp_agent.git
-      path: gleam/otp_agent
     - url: git@github.com:gleam-experiments/time.git
       path: gleam/time
     - url: git@github.com:gleam-experiments/pgo.git
