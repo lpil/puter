@@ -39,6 +39,8 @@
       path: gleam/elli
     - url: git@github.com:gleam-experiments/crypto.git
       path: gleam/crypto
+    - url: git@github.com:scripttease/gleam_contributors.git
+      path: gleam/contributors
 
     # Waive
     - url: git@github.com:lpil/waive.git
