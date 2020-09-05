@@ -101,3 +101,7 @@
       path: ad-signal/gowatcher
     - url: git@github.com:ad-signalio/cvImageHash.git
       path: ad-signal/cvImageHash
+
+    # Science writing thingy
+    - url: git@github.com:the-science-writing-revolution/templatex.git
+      path: tswr/templatex
